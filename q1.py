@@ -1,3 +1,5 @@
+#A1)
+
 import pandas as pd
 import numpy as np
 
@@ -6,18 +8,16 @@ rf = pd.read_excel("Lab Session Data.xlsx", sheet_name="Purchase data", usecols=
 
 
 
-#A1)
-
 A = rf.iloc[:,:-1].values
 
 C = rf.iloc[:,-1].values.reshape(-1,1)
 
-ATA = A.T.dot(A)
-ATC = A.T.dot(C)
+ATA = A.T.dot(A)#for transpose
+ATC = A.T.dot(C)#for transpose
 
 rankA = np.linalg.matrix_rank(A)
 
-A1 = np.linalg.pinv(A)
+A1 = np.linalg.pinv(A)#pseudo inverse
 
 
 
