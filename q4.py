@@ -30,13 +30,11 @@ lt = pd.read_excel("Lab Session Data.xlsx", sheet_name="thyroid0387_UCI",
 for col in lt.columns:
     lt[col] = pd.to_numeric(lt[col], errors='coerce')
 
-#2)
 print("data range min,max",lt.agg(['min','max']))
 
 print("missing values",lt.isnull())
 
-#3)
-
+#for finding outlier
 lt.boxplot(figsize=(10, 4))
 plt.title("Outlier Detection using Boxplot")
 plt.xticks(rotation=45)
